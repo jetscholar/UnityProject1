@@ -599,7 +599,7 @@ MonoBehaviour:
     m_CurrenRootInstanceID: 0
     m_LockTracker:
       m_IsLocked: 0
-    m_CurrentSortingName: TransformSorting
+    m_CurrentSortingName: _rb2dSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
 --- !u!114 &18
 MonoBehaviour:
@@ -681,7 +681,7 @@ MonoBehaviour:
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
-      id: unity-transform-toolbar
+      id: unity-_rb2d-toolbar
       index: 0
       layout: 2
     - dockPosition: 0
