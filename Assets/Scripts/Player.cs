@@ -16,7 +16,10 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rb2d.position = new Vector2(0.0f, 0.0f);
+        if(RealmController.Instance.IsRealmReady())
+        {
+            _rb2d.position = RealmController.Instance.GetPosition();
+        }
     }
 
     // Update is called once per frame
@@ -31,5 +34,15 @@ public class Player : MonoBehaviour
         } else if(Input.GetKey(KeyCode.DownArrow)) {
             _rb2d.position += Vector2.down* _movementSpeed * Time.deltaTime;
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(RealmController.Instance.IsRealmReady())
+        {
+            RealmController.Instance.IncreaseScore(1);
+            RealmController.Instance.SetPosition(_rb2d.position);
+        }
+
     }
 }
